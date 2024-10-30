@@ -6,21 +6,21 @@
 {%- macro codename(codename, new=False) -%}
 {% if new %}
 <section aria-labelledby="codename-reminder">
-  <p id="codename-reminder">{{ gettext('Remember, your codename is:') }}</p>
+  <p id="codename-reminder">{{ gettext('Remember, your <abbr title="user name">codename</abbr> is:') }}</p>
 {% else %}
 <section aria-labelledby="codename-heading">
-  <h2 id="codename-heading" hidden>{{ gettext('Codename') }}</h2>
+  <h2 id="codename-heading" hidden>{{ gettext('<abbr title="user name">Codename</abbr>') }}</h2>
 {% endif %}
 
   <input id="codename-show-checkbox" type="checkbox" role="button"{% if not new %} checked {% endif -%}
     aria-label="{{ gettext('Reveal Codename') }}" aria-controls="codename">
 
   <mark id="codename" lang="en-US" dir="ltr"{% if not new %}
-    aria-describedby="codename-instructions codename-explanation"{% endif %}><span>{{ codename }}</span></mark>
+    aria-describedby="codename-instructions codename-explanation"{% endif %}><span>{{ <abbr title="user name">codename</abbr> }}</span></mark>
 
   <label for="codename-show-checkbox" id="codename-show"
     aria-hidden="true">
-      {{ gettext('Show Codename') }}
+      {{ gettext('Show <abbr title="user name">Codename</abbr>') }}
   </label>
 
 </section>
