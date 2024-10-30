@@ -3,7 +3,7 @@
 {% block tab_title %}{{ gettext('Enable YubiKey (OATH-HOTP)') }}{% endblock %}
 
 {% block body %}
-<h1>{{ gettext('Enable YubiKey (OATH-HOTP)') }}</h1>
+<h1>{{ gettext('Enable YubiKey (<abbr title="HMAC-based one-time password algorithm">OATH-HOTP</abbr>)') }}</h1>
 <p>{{ gettext('Once you have configured your YubiKey, enter the 6-digit verification code below:') }}</p>
 <form id="check-token" method="post" action="{{url_for('account.new_two_factor_hotp')}}">
   <input name="csrf_token" type="hidden" value="{{ csrf_token() }}">
